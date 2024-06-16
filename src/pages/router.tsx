@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     }, {
       path: "datetime",
       lazy: async () => {
-        const { DatetimeCalcPage: DatetimeCalculator } = await import("./root/datetimeCalc")
+        const { DatetimeCalcPage: DatetimeCalculator } = await import("./datetimeCalc")
         return { Component: DatetimeCalculator }
       },
     }]

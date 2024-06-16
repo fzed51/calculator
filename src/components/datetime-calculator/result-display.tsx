@@ -1,9 +1,7 @@
-import React, { FC } from "react";
+export interface ResultDisplayProps {
+    result: Date
+}
 
-export interface ResultDisplayProps { }
-
-export const ResultDisplay: FC<ResultDisplayProps> = ({ }) => {
-    return <>ResultDisplay</>;
+export function ResultDisplay({ result }: ResultDisplayProps) {
+    return <>ResultDisplay : {result.toLocaleString()}</>;
 };
-
-export default ResultDisplay;

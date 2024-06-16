@@ -1,9 +1,44 @@
-import React, { FC } from "react";
+import { Box, Stack, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { useState } from "react";
+import { Operator } from "./types";
+export interface OperatorFormProps {
+    value: Operator;
+    onChange: (o: Operator) => void;
+}
 
-export interface OperatorFormProps { }
+export function OperatorForm({ value, onChange }: OperatorFormProps) {
 
-export const OperatorForm: FC<OperatorFormProps> = ({ }) => {
-    return <>OperatorForm</>;
+    const handleChange = (
+        _: React.MouseEvent<HTMLElement>,
+        operator: string,
+    ) => {
+        if (["-", "+"].includes(operator)) {
+            onChange(operator as Operator);
+        }
+    };
+
+    const control = {
+        value,
+        onChange: handleChange,
+        exclusive: true,
+    };
+
+    return (
+        <Box alignItems="center">
+            <Stack spacing={2} alignItems="center">
+                <ToggleButtonGroup {...control}>
+                    <ToggleButton value="+" key="add">
+                        <AddIcon />
+                    </ToggleButton>,
+                    <ToggleButton value="-" key="remove">
+                        <RemoveIcon />
+                    </ToggleButton>,
+                </ToggleButtonGroup>
+            </Stack>
+        </Box>
+    );
 };
 
 export default OperatorForm;

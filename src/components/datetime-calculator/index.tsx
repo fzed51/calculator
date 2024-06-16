@@ -20,7 +20,7 @@ export function DatetimeCalculator() {
 
     return <Stack>
         <StartDatetimeForm />
-        <OperatorForm />
+        <OperatorForm value={operator} onChange={setOperator} />
         <DiffTimeForm />
         <ResultDisplay result={result} />
     </Stack>

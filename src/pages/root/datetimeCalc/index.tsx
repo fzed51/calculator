@@ -1,5 +1,5 @@
-export function DatetimeCalculator() {
+export function DatetimeCalcPage() {
   return <>DatetimeCalculator</>;
 };
 
-export default DatetimeCalculator;
+export default DatetimeCalcPage;

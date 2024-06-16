@@ -1,10 +1,12 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { Outlet } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
+import { Outlet, useNavigate } from "react-router-dom";
+import { Abacus } from "../svg-icons/abacus";
+import { useCallback } from "react";
 
 export function PageLayout() {
-
-
+    const navigate = useNavigate()
+    const handleGoHome = useCallback(() => { navigate('/') }, [])
+    const handleGoDatetime = useCallback(() => { navigate('/datetime') }, [])
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
@@ -16,18 +18,20 @@ export function PageLayout() {
                             color="inherit"
                             aria-label="menu"
                             sx={{ mr: 2 }}
+                            onClick={handleGoHome}
                         >
-                            <MenuIcon />
+                            <Abacus />
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Calculator
                         </Typography>
-                        
-                        <Button color="inherit">Datetime</Button>                        
+                        <Button color="inherit" onClick={handleGoDatetime}>Datetime</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Outlet />
+            <Box sx={{ p: 2 }}>
+                <Outlet />
+            </Box>
         </>
     );
 };

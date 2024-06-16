@@ -1,6 +1,6 @@
 {
-    "name": "calculator",
-    "short_name": "calculator",
+    "name": "Calculator",
+    "short_name": "Calculator",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

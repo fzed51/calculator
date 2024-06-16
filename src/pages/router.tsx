@@ -13,6 +13,12 @@ export const router = createBrowserRouter([
         const { Welcome } = await import("./root")
         return { Component: Welcome }
       },
+    }, {
+      path: "datetime",
+      lazy: async () => {
+        const { DatetimeCalculator } = await import("./root/datetimeCalc")
+        return { Component: DatetimeCalculator }
+      },
     }]
   },
 ]);

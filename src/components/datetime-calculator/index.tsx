@@ -19,9 +19,9 @@ export function DatetimeCalculator() {
     }, [startDatetime, operator, diffTime])
 
     return <Stack>
-        <StartDatetimeForm value={startDatetime} onChange={setStartDatetime} />
-        <OperatorForm value={operator} onChange={setOperator} />
-        <DiffTimeForm />
-        <ResultDisplay result={result} />
+        <StartDatetimeForm  value={startDatetime} onChange={setStartDatetime} />
+        <OperatorForm  value={operator} onChange={setOperator} />
+        <DiffTimeForm  value={diffTime} onChange={setDiffTime} />
+        <ResultDisplay  result={result} />
     </Stack>
 }

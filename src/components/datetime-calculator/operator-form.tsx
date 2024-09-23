@@ -1,7 +1,6 @@
 import { Box, Stack, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useState } from "react";
 import { Operator } from "./types";
 export interface OperatorFormProps {
     value: Operator;
